@@ -1,0 +1,11 @@
+{
+  "name": "mantra-your-life",
+  "version": "1.0.0",
+  "description": "CRUD APP that gives you a daily mantra. It has the options to add mantras and delete them from the database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Ventura",
+  "license": "ISC"
+}
