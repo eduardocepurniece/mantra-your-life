@@ -8,7 +8,7 @@ function getMantra(){
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         dailyMantra = data.mantra;
-        console.log(dailyMantra);
+        document.querySelector('h2').innerHTML = data.mantra;
     })
     .catch(err => {
         console.log(`error ${err}`)
