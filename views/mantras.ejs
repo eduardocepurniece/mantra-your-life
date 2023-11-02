@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=M+PLUS+Rounded+1c:wght@400;500&display=swap" rel="stylesheet">
+
+  <link href="/css/reset.css" rel="stylesheet" type="text/css">
+  <link href="/css/mMStyle.css" rel="stylesheet" type="text/css">
+
+  <title>Your Mantra</title>
+</head>
+<body>
+  <section class="top-section gradient-text">
+    <div class="intro-text">
+      <p>Your mantra is a web application that gives you a daily motivational quote to improve your mood, inspire you and boost your motivation.</p>
+      <p>Here you can add new quotes to your quotes library, and delete the ones that don't align with your goals and desires anymore.</p>
+    </div>
+
+    <div class="add-new-mantra">
+      <h1>Add new mantra to library</h1>
+      <form action="/quotes" method="POST">
+          <input type="text" placeholder="Author" name="name" />
+          <input type="text" placeholder="Quote" name="quote" />
+          <input type="hidden" name="status" value="unseen" />
+          <div class="btn-container"><button type="submit" class="btn gradient-text">Submit</button></div>
+      </form>
+    </div>
+    
+
+  </section>
+    
+  <section class="quotes-section">
+
+    <h2>Quotes</h2>
+
+    <ul class="quotes">
+        <!-- Loop through quotes -->
+        <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+          <span><%= quotes[i].name %></span>:
+          <p><%= quotes[i].quote %></p>
+          <img src="/img/icon-delete-white.svg" class="delete-quote-buttons">
+        </li>
+        <% } %>
+    </ul>
+
+  </section>
+
+  <section class="bottom-section gradient-text">
+
+    <div class="btn-container"><a href="/"><button class="btn gradient-text">Go home</button></a></div>
+
+  </section>   
+
+  <script src="/main.js"></script>
+  </body>
+</html>
